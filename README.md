@@ -1,1 +1,0 @@
-# Dayrize-SRE-Study-docs
