@@ -8,14 +8,14 @@ Dayrize Site Reliability Engineering Case Study
 
    introduction
    project-background
-   mainModule
+   modules/mainModule
    config/config
-   controllers/controllers
+   modules/controllers/controllerProductsModule
    decorators/decorators
    errors/errors
-   services/services
+   modules/services/serviceProductsModule
    templates/templates
-   utilsModule
+   modules/utils/utilsModule
 
 .. toctree::
    :maxdepth: 2
