@@ -146,7 +146,7 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../index.html">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -330,9 +330,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-custom-application-error-handling">This module introduces the CustomError class to manage a wide range of application errors beyond authentication issues. It allows for specifying error messages, HTTP status codes, and additional payload for a rich error reporting experience. The CustomError class enhances the application’s ability to communicate errors clearly and effectively.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.custom.CustomError"><code class="docutils literal notranslate"><span class="pre">CustomError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.custom.CustomError.message"><code class="docutils literal notranslate"><span class="pre">CustomError.message</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.custom.CustomError.status_code"><code class="docutils literal notranslate"><span class="pre">CustomError.status_code</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.custom.CustomError.payload"><code class="docutils literal notranslate"><span class="pre">CustomError.payload</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">CustomError.status_code</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.custom.CustomError.to_dict"><code class="docutils literal notranslate"><span class="pre">CustomError.to_dict()</span></code></a></li>
 </ul>
 </li>
@@ -351,23 +355,84 @@ document.write(`
                   
   <section id="module-app.errors.custom">
 <span id="app-errors-custom"></span><h1><a class="reference internal" href="#module-app.errors.custom" title="app.errors.custom"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.errors.custom</span></code></a><a class="headerlink" href="#module-app.errors.custom" title="Link to this heading">#</a></h1>
-<p>Custom Error module for internal application Errors</p>
+<section id="module-custom-application-error-handling">
+<p>This module introduces the CustomError class to manage a wide range of application errors beyond authentication issues. It allows for specifying error messages, HTTP status codes, and additional payload for a rich error reporting experience. The CustomError class enhances the application’s ability to communicate errors clearly and effectively.</p>
+<p>Classes:
+- CustomError: Exception class for custom application errors.</p>
+<p>Exceptions:
+- CustomError: Used to indicate various application-specific errors, supporting custom status codes and additional error details.</p>
+</section>
 <section id="module-contents">
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
 <dl class="py exception">
 <dt class="sig sig-object py" id="app.errors.custom.CustomError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.errors.custom.</span></span><span class="sig-name descname"><span class="pre">CustomError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status_code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.errors.custom.CustomError" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Custom error class with bad request (400) default status code</p>
+<p>CustomError exception for handling various application errors with flexibility in status codes and additional payload.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.errors.custom.CustomError.message">
+<span class="sig-name descname"><span class="pre">message</span></span><a class="headerlink" href="#app.errors.custom.CustomError.message" title="Link to this definition">#</a></dt>
+<dd><p>The error message describing what went wrong.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="app.errors.custom.CustomError.status_code">
-<span class="sig-name descname"><span class="pre">status_code</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">400</span></em><a class="headerlink" href="#app.errors.custom.CustomError.status_code" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">status_code</span></span><a class="headerlink" href="#app.errors.custom.CustomError.status_code" title="Link to this definition">#</a></dt>
+<dd><p>HTTP status code to be returned. Defaults to 400 (Bad Request).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.errors.custom.CustomError.payload">
+<span class="sig-name descname"><span class="pre">payload</span></span><a class="headerlink" href="#app.errors.custom.CustomError.payload" title="Link to this definition">#</a></dt>
+<dd><p>Additional data to be included in the error response.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">_init_(self,</span> <span class="pre">message,</span> <span class="pre">status_code=None,</span> <span class="pre">payload=None):</span></span></dt>
+<dd><p>Initializes the CustomError with a message, an optional status code, and an optional payload.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">to_dict(self):</span></span></dt>
+<dd><p>Converts the error details into a dictionary for JSON serialization.</p>
+</dd></dl>
+
+<p class="rubric">Examples</p>
+<p>raise CustomError(‘An unexpected error occurred’, status_code=500, payload={‘detail’: ‘More info’})</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">status_code</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">400</span></em><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="app.errors.custom.CustomError.to_dict">
 <span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.errors.custom.CustomError.to_dict" title="Link to this definition">#</a></dt>
-<dd><p>Error to dict function</p>
+<dd><p>Serializes the error information into a dictionary format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The error details including the message and any additional payload.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -420,9 +485,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-custom-application-error-handling">This module introduces the CustomError class to manage a wide range of application errors beyond authentication issues. It allows for specifying error messages, HTTP status codes, and additional payload for a rich error reporting experience. The CustomError class enhances the application’s ability to communicate errors clearly and effectively.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.custom.CustomError"><code class="docutils literal notranslate"><span class="pre">CustomError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.custom.CustomError.message"><code class="docutils literal notranslate"><span class="pre">CustomError.message</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.custom.CustomError.status_code"><code class="docutils literal notranslate"><span class="pre">CustomError.status_code</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.custom.CustomError.payload"><code class="docutils literal notranslate"><span class="pre">CustomError.payload</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">CustomError.status_code</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.custom.CustomError.to_dict"><code class="docutils literal notranslate"><span class="pre">CustomError.to_dict()</span></code></a></li>
 </ul>
 </li>

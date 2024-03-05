@@ -146,7 +146,7 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -340,11 +340,18 @@ and the processing of authentication callbacks.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.products_controller"><code class="docutils literal notranslate"><span class="pre">products_controller</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.CustomError"><code class="docutils literal notranslate"><span class="pre">CustomError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#app.CustomError.message"><code class="docutils literal notranslate"><span class="pre">CustomError.message</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#app.CustomError.status_code"><code class="docutils literal notranslate"><span class="pre">CustomError.status_code</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#app.CustomError.payload"><code class="docutils literal notranslate"><span class="pre">CustomError.payload</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">CustomError.status_code</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#app.CustomError.to_dict"><code class="docutils literal notranslate"><span class="pre">CustomError.to_dict()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.AuthError"><code class="docutils literal notranslate"><span class="pre">AuthError</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.AuthError"><code class="docutils literal notranslate"><span class="pre">AuthError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#app.AuthError.error"><code class="docutils literal notranslate"><span class="pre">AuthError.error</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#app.AuthError.status_code"><code class="docutils literal notranslate"><span class="pre">AuthError.status_code</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.ENV_FILE"><code class="docutils literal notranslate"><span class="pre">ENV_FILE</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.create_app"><code class="docutils literal notranslate"><span class="pre">create_app()</span></code></a></li>
 </ul>
@@ -446,16 +453,71 @@ Required Roles: ADMIN_ROLE</p>
 <dt class="sig sig-object py" id="app.CustomError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">CustomError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status_code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.CustomError" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Custom error class with bad request (400) default status code</p>
+<p>CustomError exception for handling various application errors with flexibility in status codes and additional payload.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.CustomError.message">
+<span class="sig-name descname"><span class="pre">message</span></span><a class="headerlink" href="#app.CustomError.message" title="Link to this definition">#</a></dt>
+<dd><p>The error message describing what went wrong.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="app.CustomError.status_code">
-<span class="sig-name descname"><span class="pre">status_code</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">400</span></em><a class="headerlink" href="#app.CustomError.status_code" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">status_code</span></span><a class="headerlink" href="#app.CustomError.status_code" title="Link to this definition">#</a></dt>
+<dd><p>HTTP status code to be returned. Defaults to 400 (Bad Request).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.CustomError.payload">
+<span class="sig-name descname"><span class="pre">payload</span></span><a class="headerlink" href="#app.CustomError.payload" title="Link to this definition">#</a></dt>
+<dd><p>Additional data to be included in the error response.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">_init_(self,</span> <span class="pre">message,</span> <span class="pre">status_code=None,</span> <span class="pre">payload=None):</span></span></dt>
+<dd><p>Initializes the CustomError with a message, an optional status code, and an optional payload.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">to_dict(self):</span></span></dt>
+<dd><p>Converts the error details into a dictionary for JSON serialization.</p>
+</dd></dl>
+
+<p class="rubric">Examples</p>
+<p>raise CustomError(‘An unexpected error occurred’, status_code=500, payload={‘detail’: ‘More info’})</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">status_code</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">400</span></em><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="app.CustomError.to_dict">
 <span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.CustomError.to_dict" title="Link to this definition">#</a></dt>
-<dd><p>Error to dict function</p>
+<dd><p>Serializes the error information into a dictionary format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The error details including the message and any additional payload.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -464,7 +526,35 @@ Required Roles: ADMIN_ROLE</p>
 <dt class="sig sig-object py" id="app.AuthError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">AuthError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status_code</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.AuthError" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Auth error class</p>
+<p>AuthError exception for handling authentication errors with detailed information.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.AuthError.error">
+<span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#app.AuthError.error" title="Link to this definition">#</a></dt>
+<dd><p>Description of the error that occurred.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.AuthError.status_code">
+<span class="sig-name descname"><span class="pre">status_code</span></span><a class="headerlink" href="#app.AuthError.status_code" title="Link to this definition">#</a></dt>
+<dd><p>HTTP status code associated with the error.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">_init_(self,</span> <span class="pre">error,</span> <span class="pre">status_code):</span></span></dt>
+<dd><p>Initializes the AuthError with an error message and a status code.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py data">
@@ -545,11 +635,18 @@ and the processing of authentication callbacks.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.products_controller"><code class="docutils literal notranslate"><span class="pre">products_controller</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.CustomError"><code class="docutils literal notranslate"><span class="pre">CustomError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#app.CustomError.message"><code class="docutils literal notranslate"><span class="pre">CustomError.message</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#app.CustomError.status_code"><code class="docutils literal notranslate"><span class="pre">CustomError.status_code</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#app.CustomError.payload"><code class="docutils literal notranslate"><span class="pre">CustomError.payload</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">CustomError.status_code</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#app.CustomError.to_dict"><code class="docutils literal notranslate"><span class="pre">CustomError.to_dict()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.AuthError"><code class="docutils literal notranslate"><span class="pre">AuthError</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.AuthError"><code class="docutils literal notranslate"><span class="pre">AuthError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#app.AuthError.error"><code class="docutils literal notranslate"><span class="pre">AuthError.error</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#app.AuthError.status_code"><code class="docutils literal notranslate"><span class="pre">AuthError.status_code</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.ENV_FILE"><code class="docutils literal notranslate"><span class="pre">ENV_FILE</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.create_app"><code class="docutils literal notranslate"><span class="pre">create_app()</span></code></a></li>
 </ul>

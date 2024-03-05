@@ -41,10 +41,7 @@ Dayrize Site Reliability Engineering Case Study
 
 .. toctree::
    :maxdepth: 2
-   :caption: Additional Resources
-
-   additional-resources/faq
-   additional-resources/troubleshooting
+   :caption: API
 
 Indices and tables
 ==================

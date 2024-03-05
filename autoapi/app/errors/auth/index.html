@@ -146,7 +146,7 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../index.html">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -330,8 +330,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-authentication-error-handling">This module defines the AuthError class for handling authentication-related exceptions within the application. It provides detailed information on authentication failures, including specific error messages and HTTP status codes, facilitating clear and actionable error reporting.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.auth.AuthError"><code class="docutils literal notranslate"><span class="pre">AuthError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.auth.AuthError"><code class="docutils literal notranslate"><span class="pre">AuthError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.auth.AuthError.error"><code class="docutils literal notranslate"><span class="pre">AuthError.error</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.auth.AuthError.status_code"><code class="docutils literal notranslate"><span class="pre">AuthError.status_code</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -347,14 +352,48 @@ document.write(`
                   
   <section id="module-app.errors.auth">
 <span id="app-errors-auth"></span><h1><a class="reference internal" href="#module-app.errors.auth" title="app.errors.auth"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.errors.auth</span></code></a><a class="headerlink" href="#module-app.errors.auth" title="Link to this heading">#</a></h1>
-<p>Auth error module for errors declaration</p>
+<section id="module-authentication-error-handling">
+<p>This module defines the AuthError class for handling authentication-related exceptions within the application. It provides detailed information on authentication failures, including specific error messages and HTTP status codes, facilitating clear and actionable error reporting.</p>
+<p>Classes:
+- AuthError: Exception class for authentication errors.</p>
+<p>Exceptions:
+- AuthError: Raised to signal an authentication error, equipped with error details and an HTTP status code.</p>
+</section>
 <section id="module-contents">
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
 <dl class="py exception">
 <dt class="sig sig-object py" id="app.errors.auth.AuthError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.errors.auth.</span></span><span class="sig-name descname"><span class="pre">AuthError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status_code</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.errors.auth.AuthError" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Auth error class</p>
+<p>AuthError exception for handling authentication errors with detailed information.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.errors.auth.AuthError.error">
+<span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#app.errors.auth.AuthError.error" title="Link to this definition">#</a></dt>
+<dd><p>Description of the error that occurred.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.errors.auth.AuthError.status_code">
+<span class="sig-name descname"><span class="pre">status_code</span></span><a class="headerlink" href="#app.errors.auth.AuthError.status_code" title="Link to this definition">#</a></dt>
+<dd><p>HTTP status code associated with the error.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">_init_(self,</span> <span class="pre">error,</span> <span class="pre">status_code):</span></span></dt>
+<dd><p>Initializes the AuthError with an error message and a status code.</p>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -405,8 +444,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-authentication-error-handling">This module defines the AuthError class for handling authentication-related exceptions within the application. It provides detailed information on authentication failures, including specific error messages and HTTP status codes, facilitating clear and actionable error reporting.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.auth.AuthError"><code class="docutils literal notranslate"><span class="pre">AuthError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.auth.AuthError"><code class="docutils literal notranslate"><span class="pre">AuthError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.auth.AuthError.error"><code class="docutils literal notranslate"><span class="pre">AuthError.error</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.auth.AuthError.status_code"><code class="docutils literal notranslate"><span class="pre">AuthError.status_code</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
