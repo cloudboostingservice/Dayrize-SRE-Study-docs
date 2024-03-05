@@ -1,6 +1,6 @@
-=============================
+================================================
 Dayrize Site Reliability Engineering Case Study
-=============================
+================================================
 
 .. toctree::
    :maxdepth: 2
@@ -95,7 +95,7 @@ Data Collection
 - Terraform will be used to automate the configuration and management of Stackdriver Monitoring resources.
 
 Alert Policy Creation
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 - Custom alert policies will be created for each metric, defining thresholds and conditions that trigger notifications when anomalies are detected.
 - Alert policies will be configured to send notifications to a specific Slack channel, allowing relevant teams to receive timely information on critical events.
