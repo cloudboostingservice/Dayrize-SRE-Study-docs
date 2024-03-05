@@ -6,8 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; Dayrize SRE Study 1.0 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>JWT Utils Module &#8212; Dayrize SRE Study 1.0 documentation</title>
   
   
   
@@ -39,9 +40,10 @@
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
-    <link rel="index" title="Index" href="#" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'utilsModule';</script>
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Product Service Module" href="modules/services/serviceProductsModule.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -103,8 +105,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -145,11 +145,10 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="modules/mainModule.html">Main Application Module</a></li>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="modules/controllers/controllerProductsModule.html">Products Controller Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules/services/serviceProductsModule.html">Product Service Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules/utils/utilsModule.html">JWT Utils Module</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">JWT Utils Module</a></li>
 </ul>
 
     </div>
@@ -191,6 +190,54 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/utilsModule.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -238,7 +285,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1></h1>
+    <h1>JWT Utils Module</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -252,96 +299,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- <a href="#A"><strong>A</strong></a>
- | <a href="#C"><strong>C</strong></a>
- | <a href="#G"><strong>G</strong></a>
- | <a href="#J"><strong>J</strong></a>
- | <a href="#M"><strong>M</strong></a>
- 
-</div>
-<h2 id="A">A</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="modules/utils/utilsModule.html#jwt.ALGORITHMS">ALGORITHMS (in module jwt)</a>
-</li>
-      <li>
-    app.__init__
-
-      <ul>
-        <li><a href="modules/mainModule.html#module-app.__init__">module</a>
-</li>
-      </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    app.controllers.products
-
-      <ul>
-        <li><a href="modules/controllers/controllerProductsModule.html#module-app.controllers.products">module</a>
-</li>
-      </ul></li>
-      <li>
-    app.services.products
-
-      <ul>
-        <li><a href="modules/services/serviceProductsModule.html#module-app.services.products">module</a>
-</li>
-      </ul></li>
-  </ul></td>
-</tr></table>
-
-<h2 id="C">C</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="modules/mainModule.html#app.__init__.create_app">create_app() (in module app.__init__)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="G">G</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="modules/utils/utilsModule.html#jwt.get_token_auth_header">get_token_auth_header() (in module jwt)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="J">J</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    jwt
-
-      <ul>
-        <li><a href="modules/utils/utilsModule.html#module-jwt">module</a>
-</li>
-      </ul></li>
-  </ul></td>
-</tr></table>
-
-<h2 id="M">M</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    module
-
-      <ul>
-        <li><a href="modules/mainModule.html#module-app.__init__">app.__init__</a>
-</li>
-        <li><a href="modules/controllers/controllerProductsModule.html#module-app.controllers.products">app.controllers.products</a>
-</li>
-        <li><a href="modules/services/serviceProductsModule.html#module-app.services.products">app.services.products</a>
-</li>
-        <li><a href="modules/utils/utilsModule.html#module-jwt">jwt</a>
-</li>
-      </ul></li>
-  </ul></td>
-</tr></table>
-
+  <section id="jwt-utils-module">
+<h1>JWT Utils Module<a class="headerlink" href="#jwt-utils-module" title="Link to this heading">#</a></h1>
+<p>This module contains utility functions for handling JWT (JSON Web Tokens) in Flask applications. It provides a method to extract the JWT from the Authorization header of a request.</p>
+</section>
 
 
                 </article>
@@ -354,6 +315,15 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="modules/services/serviceProductsModule.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Product Service Module</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -372,7 +342,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Team@CBS - Andrés Mayor, Diego Hernández
+By Team@CBS - Andrés Mayor, Diego Hernández, Sean Quintero
 </p>
 
   </div>
