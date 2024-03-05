@@ -146,6 +146,7 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mainModule.html">Main Application Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../controllers/controllerProductsModule.html">Products Controller Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../services/serviceProductsModule.html">Product Service Module</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">JWT Utils Module</a></li>
@@ -298,7 +299,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-jwt">jwt_utils Module</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jwt.ALGORITHMS"><code class="docutils literal notranslate"><span class="pre">ALGORITHMS</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jwt.get_token_auth_header"><code class="docutils literal notranslate"><span class="pre">get_token_auth_header()</span></code></a></li>
 </ul>
             </nav>
@@ -329,9 +329,9 @@ ALGORITHMS (list): List of algorithms used for decoding JWTs, defaulting to RS25
 </dd>
 </dl>
 </section>
-<dl class="py data">
-<dt class="sig sig-object py" id="jwt.ALGORITHMS">
-<span class="sig-prename descclassname"><span class="pre">jwt.</span></span><span class="sig-name descname"><span class="pre">ALGORITHMS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['RS256']</span></em><a class="headerlink" href="#jwt.ALGORITHMS" title="Link to this definition">#</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="jwt.get_token_auth_header">
+<span class="sig-prename descclassname"><span class="pre">jwt.</span></span><span class="sig-name descname"><span class="pre">get_token_auth_header</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jwt.get_token_auth_header" title="Link to this definition">#</a></dt>
 <dd><p>Obtains the Access Token from the Authorization Header.</p>
 <p>This function extracts the JWT token from the Authorization header in the request.
 It validates the structure of the header and the presence of the token. If the header
@@ -349,11 +349,6 @@ is not present, or the token is in an incorrect format, an AuthError is raised.<
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="jwt.get_token_auth_header">
-<span class="sig-prename descclassname"><span class="pre">jwt.</span></span><span class="sig-name descname"><span class="pre">get_token_auth_header</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jwt.get_token_auth_header" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
 
 </section>
 
@@ -394,7 +389,6 @@ is not present, or the token is in an incorrect format, an AuthError is raised.<
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-jwt">jwt_utils Module</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jwt.ALGORITHMS"><code class="docutils literal notranslate"><span class="pre">ALGORITHMS</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jwt.get_token_auth_header"><code class="docutils literal notranslate"><span class="pre">get_token_auth_header()</span></code></a></li>
 </ul>
   </nav></div>
