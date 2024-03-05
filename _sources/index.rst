@@ -8,14 +8,7 @@ Dayrize Site Reliability Engineering Case Study
 
    introduction
    project-background
-   modules/mainModule
-   config/config
-   modules/controllers/controllerProductsModule
-   decorators/decorators
-   errors/errors
-   modules/services/serviceProductsModule
-   templates/templates
-   modules/utils/utilsModule
+   appendices/design-decisions
 
 .. toctree::
    :maxdepth: 2
@@ -52,12 +45,6 @@ Dayrize Site Reliability Engineering Case Study
 
    additional-resources/faq
    additional-resources/troubleshooting
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Appendices
-
-   appendices/design-decisions
 
 Indices and tables
 ==================
