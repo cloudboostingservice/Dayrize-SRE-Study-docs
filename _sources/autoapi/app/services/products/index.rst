@@ -36,6 +36,7 @@ Functions
    app.services.products.save_product
    app.services.products.get_products
    app.services.products.get_product
+   app.services.products.add_review
 
 
 
@@ -74,5 +75,17 @@ Functions
 
    :returns: A dictionary representing the found product, or None if no product is found.
    :rtype: dict or None
+
+
+.. py:function:: add_review(review: app.model.review.Review, product_id)
+
+   Saves a product's review to the database.
+
+   This function takes a review instance, converts it to a dictionary, and saves it to the Firestore database.
+   Each review is saved in the product's document corresponding to its unique ID within the 'products' collection.
+
+   :param review: The review instance to be saved.
+   :type review: Review
+   :param product_id: The id of the product
 
 

@@ -37,7 +37,9 @@ Functions
    app.controllers.products.save_product
    app.controllers.products.get_products
    app.controllers.products.get_product
+   app.controllers.products.save_product_review
    app.controllers.products.validate_product_fields
+   app.controllers.products.validate_review_fields
 
 
 
@@ -87,6 +89,23 @@ Attributes
    :type product_id: str
 
 
+.. py:function:: save_product_review(product_id)
+
+   Endpoint to save a review for a product by its unique ID.
+
+   If the product is found, it saves the review. If not found, it raises a CustomError.
+
+   Request Method: POST
+   Authentication: Required
+   Required Roles: USER_ROLE
+   :param product_id: The unique ID of the product.
+   :type product_id: str
+
+   Body:
+       description: The review text itself
+       rating (float): Number between 0 and 5
+
+
 .. py:function:: validate_product_fields(product)
 
    Validates the required fields in a product's data.
@@ -95,6 +114,17 @@ Attributes
    it raises a CustomError.
 
    :param product: The product data to validate.
+   :type product: dict
+
+
+.. py:function:: validate_review_fields(review)
+
+   Validates the required fields in a review's data.
+
+   This function checks if the 'description' and 'calification' fields are present in the review data. If not,
+   it raises a CustomError.
+
+   :param product: The review data to validate.
    :type product: dict
 
 

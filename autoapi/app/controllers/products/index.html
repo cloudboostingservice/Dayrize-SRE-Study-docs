@@ -183,6 +183,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../model/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.model</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../model/product/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.model.product</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../model/review/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.model.review</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../services/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.services</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -353,7 +354,9 @@ These endpoints incorporate authentication and role-based access control.</a></l
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.controllers.products.save_product"><code class="docutils literal notranslate"><span class="pre">save_product()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.controllers.products.get_products"><code class="docutils literal notranslate"><span class="pre">get_products()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.controllers.products.get_product"><code class="docutils literal notranslate"><span class="pre">get_product()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.controllers.products.save_product_review"><code class="docutils literal notranslate"><span class="pre">save_product_review()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.controllers.products.validate_product_fields"><code class="docutils literal notranslate"><span class="pre">validate_product_fields()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.controllers.products.validate_review_fields"><code class="docutils literal notranslate"><span class="pre">validate_review_fields()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -402,8 +405,14 @@ validate_product_fields(product): Validates the required fields in a product’s
 <tr class="row-odd"><td><p><a class="reference internal" href="#app.controllers.products.get_product" title="app.controllers.products.get_product"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_product</span></code></a>(product_id)</p></td>
 <td><p>Endpoint to retrieve a single product by its unique ID.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#app.controllers.products.validate_product_fields" title="app.controllers.products.validate_product_fields"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_product_fields</span></code></a>(product)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#app.controllers.products.save_product_review" title="app.controllers.products.save_product_review"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_product_review</span></code></a>(product_id)</p></td>
+<td><p>Endpoint to save a review for a product by its unique ID.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#app.controllers.products.validate_product_fields" title="app.controllers.products.validate_product_fields"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_product_fields</span></code></a>(product)</p></td>
 <td><p>Validates the required fields in a product's data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#app.controllers.products.validate_review_fields" title="app.controllers.products.validate_review_fields"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_review_fields</span></code></a>(review)</p></td>
+<td><p>Validates the required fields in a review's data.</p></td>
 </tr>
 </tbody>
 </table>
@@ -454,6 +463,23 @@ Authentication: Not Required
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="app.controllers.products.save_product_review">
+<span class="sig-prename descclassname"><span class="pre">app.controllers.products.</span></span><span class="sig-name descname"><span class="pre">save_product_review</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">product_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.controllers.products.save_product_review" title="Link to this definition">#</a></dt>
+<dd><p>Endpoint to save a review for a product by its unique ID.</p>
+<p>If the product is found, it saves the review. If not found, it raises a CustomError.</p>
+<p>Request Method: POST
+Authentication: Required
+Required Roles: USER_ROLE
+:param product_id: The unique ID of the product.
+:type product_id: str</p>
+<dl class="simple">
+<dt>Body:</dt><dd><p>description: The review text itself
+rating (float): Number between 0 and 5</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="app.controllers.products.validate_product_fields">
 <span class="sig-prename descclassname"><span class="pre">app.controllers.products.</span></span><span class="sig-name descname"><span class="pre">validate_product_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">product</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.controllers.products.validate_product_fields" title="Link to this definition">#</a></dt>
 <dd><p>Validates the required fields in a product’s data.</p>
@@ -462,6 +488,19 @@ it raises a CustomError.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>product</strong> (<em>dict</em>) – The product data to validate.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.controllers.products.validate_review_fields">
+<span class="sig-prename descclassname"><span class="pre">app.controllers.products.</span></span><span class="sig-name descname"><span class="pre">validate_review_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">review</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.controllers.products.validate_review_fields" title="Link to this definition">#</a></dt>
+<dd><p>Validates the required fields in a review’s data.</p>
+<p>This function checks if the ‘description’ and ‘calification’ fields are present in the review data. If not,
+it raises a CustomError.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>product</strong> (<em>dict</em>) – The review data to validate.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -525,7 +564,9 @@ These endpoints incorporate authentication and role-based access control.</a></l
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.controllers.products.save_product"><code class="docutils literal notranslate"><span class="pre">save_product()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.controllers.products.get_products"><code class="docutils literal notranslate"><span class="pre">get_products()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.controllers.products.get_product"><code class="docutils literal notranslate"><span class="pre">get_product()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.controllers.products.save_product_review"><code class="docutils literal notranslate"><span class="pre">save_product_review()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.controllers.products.validate_product_fields"><code class="docutils literal notranslate"><span class="pre">validate_product_fields()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.controllers.products.validate_review_fields"><code class="docutils literal notranslate"><span class="pre">validate_review_fields()</span></code></a></li>
 </ul>
 </li>
 </ul>

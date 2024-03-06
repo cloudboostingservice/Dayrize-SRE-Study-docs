@@ -16,6 +16,7 @@ Submodules
    :maxdepth: 1
 
    product/index.rst
+   review/index.rst
 
 
 Package Contents
@@ -27,11 +28,16 @@ Classes
 .. autoapisummary::
 
    app.model.Product
+   app.model.Review
 
 
 
 
 .. py:class:: Product(name, description)
+
+
+
+.. py:class:: Review(description, rating)
 
 
 

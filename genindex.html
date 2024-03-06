@@ -182,6 +182,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="autoapi/app/model/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.model</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/app/model/product/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.model.product</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/app/model/review/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.model.review</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="autoapi/app/services/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.services</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -327,18 +328,28 @@ document.write(`
         <li><a href="autoapi/app/decorators/index.html#app.decorators.RequiredRoles.__call__">(app.decorators.RequiredRoles method)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/app/model/product/index.html#product.Product.__init__">__init__() (product.Product method)</a>
+
+      <ul>
+        <li><a href="autoapi/app/model/review/index.html#review.Review.__init__">(review.Review method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="autoapi/app/model/product/index.html#product.Product.__init__">__init__() (product.Product method)</a>
-</li>
       <li><a href="autoapi/app/model/product/index.html#product.Product._id">_id (product.Product attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/app/model/review/index.html#review.Review._id">(review.Review attribute)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/app/services/products/index.html#app.services.products.add_review">add_review() (in module app.services.products)</a>
+</li>
       <li><a href="autoapi/roles/index.html#roles.ADMIN_ROLE">ADMIN_ROLE (in module roles)</a>
 </li>
       <li><a href="autoapi/jwt/index.html#jwt.ALGORITHMS">ALGORITHMS (in module jwt)</a>
@@ -441,6 +452,13 @@ document.write(`
 
       <ul>
         <li><a href="autoapi/app/model/product/index.html#module-app.model.product">module</a>
+</li>
+      </ul></li>
+      <li>
+    app.model.review
+
+      <ul>
+        <li><a href="autoapi/app/model/review/index.html#module-app.model.review">module</a>
 </li>
       </ul></li>
       <li>
@@ -610,6 +628,8 @@ document.write(`
 </li>
         <li><a href="autoapi/app/model/product/index.html#module-app.model.product">app.model.product</a>
 </li>
+        <li><a href="autoapi/app/model/review/index.html#module-app.model.review">app.model.review</a>
+</li>
         <li><a href="autoapi/app/services/index.html#module-app.services">app.services</a>
 </li>
         <li><a href="autoapi/app/services/products/index.html#module-app.services.products">app.services.products</a>
@@ -617,6 +637,8 @@ document.write(`
         <li><a href="autoapi/jwt/index.html#module-jwt">jwt</a>
 </li>
         <li><a href="autoapi/app/model/product/index.html#module-product">product</a>
+</li>
+        <li><a href="autoapi/app/model/review/index.html#module-review">review</a>
 </li>
         <li><a href="autoapi/roles/index.html#module-roles">roles</a>
 </li>
@@ -676,8 +698,21 @@ document.write(`
         <li><a href="autoapi/app/decorators/auth/index.html#app.decorators.auth.requires_auth">(in module app.decorators.auth)</a>
 </li>
       </ul></li>
+      <li>
+    review
+
+      <ul>
+        <li><a href="autoapi/app/model/review/index.html#module-review">module</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/app/model/index.html#app.model.Review">Review (class in app.model)</a>
+
+      <ul>
+        <li><a href="autoapi/app/model/review/index.html#id0">(class in review)</a>, <a href="autoapi/app/model/review/index.html#review.Review">[1]</a>
+</li>
+      </ul></li>
       <li>
     roles
 
@@ -703,6 +738,8 @@ document.write(`
         <li><a href="autoapi/app/services/products/index.html#app.services.products.save_product">(in module app.services.products)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/app/controllers/products/index.html#app.controllers.products.save_product_review">save_product_review() (in module app.controllers.products)</a>
+</li>
       <li><a href="autoapi/app/index.html#app.AuthError.status_code">status_code (app.AuthError attribute)</a>
 
       <ul>
@@ -746,6 +783,10 @@ document.write(`
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/app/controllers/products/index.html#app.controllers.products.validate_product_fields">validate_product_fields() (in module app.controllers.products)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/app/controllers/products/index.html#app.controllers.products.validate_review_fields">validate_review_fields() (in module app.controllers.products)</a>
 </li>
   </ul></td>
 </tr></table>

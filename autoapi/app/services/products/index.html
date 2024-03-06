@@ -183,6 +183,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../model/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.model</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../model/product/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.model.product</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../model/review/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.model.review</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3 current active has-children"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.services</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -349,6 +350,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.services.products.save_product"><code class="docutils literal notranslate"><span class="pre">save_product()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.services.products.get_products"><code class="docutils literal notranslate"><span class="pre">get_products()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.services.products.get_product"><code class="docutils literal notranslate"><span class="pre">get_product()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.services.products.add_review"><code class="docutils literal notranslate"><span class="pre">add_review()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -397,6 +399,9 @@ document.write(`
 <tr class="row-odd"><td><p><a class="reference internal" href="#app.services.products.get_product" title="app.services.products.get_product"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_product</span></code></a>(product_id)</p></td>
 <td><p>Retrieves a product by its unique ID.</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#app.services.products.add_review" title="app.services.products.add_review"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_review</span></code></a>(review, product_id)</p></td>
+<td><p>Saves a product's review to the database.</p></td>
+</tr>
 </tbody>
 </table>
 <dl class="py function">
@@ -444,6 +449,22 @@ None is returned.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.services.products.add_review">
+<span class="sig-prename descclassname"><span class="pre">app.services.products.</span></span><span class="sig-name descname"><span class="pre">add_review</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">review</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">app.model.review.Review</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.services.products.add_review" title="Link to this definition">#</a></dt>
+<dd><p>Saves a product’s review to the database.</p>
+<p>This function takes a review instance, converts it to a dictionary, and saves it to the Firestore database.
+Each review is saved in the product’s document corresponding to its unique ID within the ‘products’ collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>review</strong> (<a class="reference internal" href="../../model/index.html#app.model.Review" title="app.model.Review"><em>Review</em></a>) – The review instance to be saved.</p></li>
+<li><p><strong>product_id</strong> – The id of the product</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -503,6 +524,7 @@ None is returned.</p>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.services.products.save_product"><code class="docutils literal notranslate"><span class="pre">save_product()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.services.products.get_products"><code class="docutils literal notranslate"><span class="pre">get_products()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.services.products.get_product"><code class="docutils literal notranslate"><span class="pre">get_product()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.services.products.add_review"><code class="docutils literal notranslate"><span class="pre">add_review()</span></code></a></li>
 </ul>
 </li>
 </ul>
