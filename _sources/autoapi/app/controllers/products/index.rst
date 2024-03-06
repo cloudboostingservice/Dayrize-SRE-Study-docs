@@ -121,7 +121,7 @@ Attributes
 
    Validates the required fields in a review's data.
 
-   This function checks if the 'description' and 'calification' fields are present in the review data. If not,
+   This function checks if the 'description' and 'rating' fields are present in the review data. If not,
    it raises a CustomError.
 
    :param product: The review data to validate.
