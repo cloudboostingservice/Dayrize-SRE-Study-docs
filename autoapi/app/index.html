@@ -191,8 +191,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../jwt/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jwt</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../roles/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">roles</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jwt/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jwt</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -343,6 +343,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-module">This module sets up and configures the Flask application for the Dayrize Site Reliability Engineering Case Study. It integrates with external services like Auth0 for authentication, utilizes Flask-Loguru for advanced logging capabilities, and handles custom errors through well-defined error handlers. Specifically, it supports routes for product management, user authentication processes (including login and logout functionalities), and the processing of authentication callbacks efficiently.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-contents">Package Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
@@ -381,29 +382,7 @@ document.write(`
                   
   <section id="module-app">
 <span id="app"></span><h1><a class="reference internal" href="#module-app" title="app"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app</span></code></a><a class="headerlink" href="#module-app" title="Link to this heading">#</a></h1>
-<p>Main Module
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
-===========</p>
-<p>This module sets up and configures the Flask application for the Dayrize Site Reliability Engineering Case Study. It integrates with Auth0 for authentication, utilizes Flask-Loguru for logging, and handles custom errors through defined error handlers. The application supports routes for product management, user authentication (login and logout), and the processing of authentication callbacks.</p>
-<dl class="simple">
-<dt>Functions:</dt><dd><dl class="simple">
-<dt>create_app() -&gt; Flask: Creates and configures the Flask application instance.</dt><dd><ul class="simple">
-<li><p>It sets up logging, registers the products controller and auth controller blueprints, and defines routes for authentication and error handling. Environment variables are used for configuration.</p></li>
-<li><dl class="simple">
-<dt>Inner Functions:</dt><dd><ul>
-<li><p>invalid_api_usage(e: CustomError) -&gt; tuple: Handles custom errors defined in the application, returning a JSON response with the error details and HTTP status code.</p></li>
-<li><p>handle_auth_error(ex: AuthError) -&gt; Response: Handles authentication errors, returning a JSON response with the authentication error details and HTTP status code.</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</dd>
-<dt>Constants:</dt><dd><p>ENV_FILE (str): Path to the environment variables file, found using <cite>find_dotenv</cite>.</p>
-</dd>
-</dl>
+<section id="main-module">
 <p>This module sets up and configures the Flask application for the Dayrize Site Reliability Engineering Case Study. It integrates with external services like Auth0 for authentication, utilizes Flask-Loguru for advanced logging capabilities, and handles custom errors through well-defined error handlers. Specifically, it supports routes for product management, user authentication processes (including login and logout functionalities), and the processing of authentication callbacks efficiently.</p>
 <p>Functions:
 create_app() -&gt; Flask: Creates and configures the Flask application instance, setting up logging, registering controller blueprints for product management and authentication routes, and defining error handlers for custom and authentication-related errors.</p>
@@ -414,7 +393,7 @@ Exceptions:</p>
 <div><p>CustomError: A custom exception class for handling application-specific errors. It allows for structured error responses that include a status code and a detailed error message.
 AuthError: An exception class designed for handling authentication-related errors. It is used to construct responses with specific error information and the corresponding HTTP status code when authentication fails.</p>
 </div></blockquote>
-<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes</p>
+</section>
 <section id="subpackages">
 <h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
@@ -662,6 +641,7 @@ LOG_LEVEL, AUTH0_DOMAIN, and AUTH0_CLIENT_ID for integration with external servi
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-module">This module sets up and configures the Flask application for the Dayrize Site Reliability Engineering Case Study. It integrates with external services like Auth0 for authentication, utilizes Flask-Loguru for advanced logging capabilities, and handles custom errors through well-defined error handlers. Specifically, it supports routes for product management, user authentication processes (including login and logout functionalities), and the processing of authentication callbacks efficiently.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-contents">Package Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>

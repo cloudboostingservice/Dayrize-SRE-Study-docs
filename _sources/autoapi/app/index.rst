@@ -6,22 +6,6 @@
 .. autoapi-nested-parse::
 
    Main Module
-   <<<<<<< Updated upstream
-   ===========
-
-   This module sets up and configures the Flask application for the Dayrize Site Reliability Engineering Case Study. It integrates with Auth0 for authentication, utilizes Flask-Loguru for logging, and handles custom errors through defined error handlers. The application supports routes for product management, user authentication (login and logout), and the processing of authentication callbacks.
-
-   Functions:
-       create_app() -> Flask: Creates and configures the Flask application instance.
-           - It sets up logging, registers the products controller and auth controller blueprints, and defines routes for authentication and error handling. Environment variables are used for configuration.
-           - Inner Functions:
-               - invalid_api_usage(e: CustomError) -> tuple: Handles custom errors defined in the application, returning a JSON response with the error details and HTTP status code.
-               - handle_auth_error(ex: AuthError) -> Response: Handles authentication errors, returning a JSON response with the authentication error details and HTTP status code.
-
-   Constants:
-       ENV_FILE (str): Path to the environment variables file, found using `find_dotenv`.
-
-   =======
    ======================
    This module sets up and configures the Flask application for the Dayrize Site Reliability Engineering Case Study. It integrates with external services like Auth0 for authentication, utilizes Flask-Loguru for advanced logging capabilities, and handles custom errors through well-defined error handlers. Specifically, it supports routes for product management, user authentication processes (including login and logout functionalities), and the processing of authentication callbacks efficiently.
 
@@ -33,7 +17,6 @@
    Exceptions:
        CustomError: A custom exception class for handling application-specific errors. It allows for structured error responses that include a status code and a detailed error message.
        AuthError: An exception class designed for handling authentication-related errors. It is used to construct responses with specific error information and the corresponding HTTP status code when authentication fails.
-   >>>>>>> Stashed changes
 
 
 
