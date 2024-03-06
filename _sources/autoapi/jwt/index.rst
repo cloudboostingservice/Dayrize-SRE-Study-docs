@@ -5,7 +5,7 @@
 
 .. autoapi-nested-parse::
 
-   jwt_utils Module
+   Utils - JWT
    ================
 
    This module provides utilities for handling JWT (JSON Web Tokens) authentication
@@ -20,6 +20,9 @@
        AUTH0_DOMAIN (str): The Auth0 domain, fetched from environment variables.
        CLIENT_ID (str): The Auth0 Client ID, fetched from environment variables.
        ALGORITHMS (list): List of algorithms used for decoding JWTs, defaulting to RS256.
+
+   Exceptions:
+       AuthError: Raised when the Authorization header is missing, not properly formatted, or does not start with 'Bearer '. Includes an error code, a descriptive message, and sets the HTTP status code to 401.
 
 
 

@@ -5,7 +5,7 @@
 
 .. autoapi-nested-parse::
 
-   Product Module
+   Model - Product
    ==============
 
    .. module:: product

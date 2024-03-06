@@ -146,7 +146,12 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-background.html">Project Background</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -155,6 +160,7 @@
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="controllers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="controllers/auth/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers.auth</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="controllers/products/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers.products</span></code></a></li>
 </ul>
 </li>
@@ -330,15 +336,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-module">This module sets up and configures the Flask application for the Dayrize Site Reliability Engineering Case Study.
-It integrates with Auth0 for authentication, utilizes Flask-Loguru for logging, and handles custom errors through
-defined error handlers. The application supports routes for product management, user authentication (login and logout),
-and the processing of authentication callbacks.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-contents">Package Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.products_controller"><code class="docutils literal notranslate"><span class="pre">products_controller</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.auth_controller"><code class="docutils literal notranslate"><span class="pre">auth_controller</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.CustomError"><code class="docutils literal notranslate"><span class="pre">CustomError</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#app.CustomError.message"><code class="docutils literal notranslate"><span class="pre">CustomError.message</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#app.CustomError.status_code"><code class="docutils literal notranslate"><span class="pre">CustomError.status_code</span></code></a></li>
@@ -371,16 +374,40 @@ and the processing of authentication callbacks.</a></li>
                   
   <section id="module-app">
 <span id="app"></span><h1><a class="reference internal" href="#module-app" title="app"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app</span></code></a><a class="headerlink" href="#module-app" title="Link to this heading">#</a></h1>
-<section id="main-module">
-<p>This module sets up and configures the Flask application for the Dayrize Site Reliability Engineering Case Study.
-It integrates with Auth0 for authentication, utilizes Flask-Loguru for logging, and handles custom errors through
-defined error handlers. The application supports routes for product management, user authentication (login and logout),
-and the processing of authentication callbacks.</p>
+<p>Main Module
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
+===========</p>
+<p>This module sets up and configures the Flask application for the Dayrize Site Reliability Engineering Case Study. It integrates with Auth0 for authentication, utilizes Flask-Loguru for logging, and handles custom errors through defined error handlers. The application supports routes for product management, user authentication (login and logout), and the processing of authentication callbacks.</p>
 <dl class="simple">
-<dt>Functions:</dt><dd><p>create_app(): Creates and configures the Flask application instance.</p>
+<dt>Functions:</dt><dd><dl class="simple">
+<dt>create_app() -&gt; Flask: Creates and configures the Flask application instance.</dt><dd><ul class="simple">
+<li><p>It sets up logging, registers the products controller and auth controller blueprints, and defines routes for authentication and error handling. Environment variables are used for configuration.</p></li>
+<li><dl class="simple">
+<dt>Inner Functions:</dt><dd><ul>
+<li><p>invalid_api_usage(e: CustomError) -&gt; tuple: Handles custom errors defined in the application, returning a JSON response with the error details and HTTP status code.</p></li>
+<li><p>handle_auth_error(ex: AuthError) -&gt; Response: Handles authentication errors, returning a JSON response with the authentication error details and HTTP status code.</p></li>
+</ul>
 </dd>
 </dl>
-</section>
+</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt>Constants:</dt><dd><p>ENV_FILE (str): Path to the environment variables file, found using <cite>find_dotenv</cite>.</p>
+</dd>
+</dl>
+<p>This module sets up and configures the Flask application for the Dayrize Site Reliability Engineering Case Study. It integrates with external services like Auth0 for authentication, utilizes Flask-Loguru for advanced logging capabilities, and handles custom errors through well-defined error handlers. Specifically, it supports routes for product management, user authentication processes (including login and logout functionalities), and the processing of authentication callbacks efficiently.</p>
+<p>Functions:
+create_app() -&gt; Flask: Creates and configures the Flask application instance, setting up logging, registering controller blueprints for product management and authentication routes, and defining error handlers for custom and authentication-related errors.</p>
+<p>Constants:
+ENV_FILE (str): Path to the .env file, determined by searching the directory structure. Used to load environment variables critical for application configuration.
+Exceptions:</p>
+<blockquote>
+<div><p>CustomError: A custom exception class for handling application-specific errors. It allows for structured error responses that include a status code and a detailed error message.
+AuthError: An exception class designed for handling authentication-related errors. It is used to construct responses with specific error information and the corresponding HTTP status code when authentication fails.</p>
+</div></blockquote>
+<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes</p>
 <section id="subpackages">
 <h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
@@ -390,6 +417,7 @@ and the processing of authentication callbacks.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="controllers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="controllers/auth/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers.auth</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="controllers/products/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers.products</span></code></a></li>
 </ul>
 </li>
@@ -431,9 +459,12 @@ and the processing of authentication callbacks.</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#app.products_controller" title="app.products_controller"><code class="xref py py-obj docutils literal notranslate"><span class="pre">products_controller</span></code></a></p></td>
-<td><p>Endpoint to save a new product.</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#app.ENV_FILE" title="app.ENV_FILE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ENV_FILE</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#app.auth_controller" title="app.auth_controller"><code class="xref py py-obj docutils literal notranslate"><span class="pre">auth_controller</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#app.ENV_FILE" title="app.ENV_FILE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ENV_FILE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -441,13 +472,12 @@ and the processing of authentication callbacks.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="app.products_controller">
 <span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">products_controller</span></span><a class="headerlink" href="#app.products_controller" title="Link to this definition">#</a></dt>
-<dd><p>Endpoint to save a new product.</p>
-<p>This endpoint requires authentication and an admin role. It accepts JSON data representing a product,
-validates the necessary fields, creates a Product instance, and saves it to the database.</p>
-<p>Request Method: POST
-Authentication: Required
-Required Roles: ADMIN_ROLE</p>
-</dd></dl>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="app.auth_controller">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">auth_controller</span></span><a class="headerlink" href="#app.auth_controller" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="app.CustomError">
@@ -625,15 +655,12 @@ LOG_LEVEL, AUTH0_DOMAIN, and AUTH0_CLIENT_ID for integration with external servi
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-module">This module sets up and configures the Flask application for the Dayrize Site Reliability Engineering Case Study.
-It integrates with Auth0 for authentication, utilizes Flask-Loguru for logging, and handles custom errors through
-defined error handlers. The application supports routes for product management, user authentication (login and logout),
-and the processing of authentication callbacks.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-contents">Package Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.products_controller"><code class="docutils literal notranslate"><span class="pre">products_controller</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.auth_controller"><code class="docutils literal notranslate"><span class="pre">auth_controller</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.CustomError"><code class="docutils literal notranslate"><span class="pre">CustomError</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#app.CustomError.message"><code class="docutils literal notranslate"><span class="pre">CustomError.message</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#app.CustomError.status_code"><code class="docutils literal notranslate"><span class="pre">CustomError.status_code</span></code></a></li>

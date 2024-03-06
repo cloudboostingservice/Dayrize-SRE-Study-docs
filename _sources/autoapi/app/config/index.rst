@@ -5,7 +5,7 @@
 
 .. autoapi-nested-parse::
 
-   Doc of the module
+   Module for firebase exports
 
 
 

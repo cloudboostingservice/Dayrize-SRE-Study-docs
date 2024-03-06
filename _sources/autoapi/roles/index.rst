@@ -5,7 +5,7 @@
 
 .. autoapi-nested-parse::
 
-   Constants for roles
+   App roles
 
 
 

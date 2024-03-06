@@ -146,7 +146,12 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../project-background.html">Project Background</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../index.html">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -155,6 +160,7 @@
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../controllers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/auth/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers.auth</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../controllers/products/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers.products</span></code></a></li>
 </ul>
 </li>
@@ -330,7 +336,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-custom-application-error-handling">This module introduces the CustomError class to manage a wide range of application errors beyond authentication issues. It allows for specifying error messages, HTTP status codes, and additional payload for a rich error reporting experience. The CustomError class enhances the application’s ability to communicate errors clearly and effectively.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errors-custom-error-handling">This module introduces the CustomError class to manage a wide range of application errors beyond authentication issues. It allows for specifying error messages, HTTP status codes, and additional payload for a rich error reporting experience. The CustomError class enhances the application’s ability to communicate errors clearly and effectively.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.custom.CustomError"><code class="docutils literal notranslate"><span class="pre">CustomError</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.custom.CustomError.message"><code class="docutils literal notranslate"><span class="pre">CustomError.message</span></code></a></li>
@@ -355,7 +361,7 @@ document.write(`
                   
   <section id="module-app.errors.custom">
 <span id="app-errors-custom"></span><h1><a class="reference internal" href="#module-app.errors.custom" title="app.errors.custom"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.errors.custom</span></code></a><a class="headerlink" href="#module-app.errors.custom" title="Link to this heading">#</a></h1>
-<section id="module-custom-application-error-handling">
+<section id="errors-custom-error-handling">
 <p>This module introduces the CustomError class to manage a wide range of application errors beyond authentication issues. It allows for specifying error messages, HTTP status codes, and additional payload for a rich error reporting experience. The CustomError class enhances the application’s ability to communicate errors clearly and effectively.</p>
 <p>Classes:
 - CustomError: Exception class for custom application errors.</p>
@@ -485,7 +491,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-custom-application-error-handling">This module introduces the CustomError class to manage a wide range of application errors beyond authentication issues. It allows for specifying error messages, HTTP status codes, and additional payload for a rich error reporting experience. The CustomError class enhances the application’s ability to communicate errors clearly and effectively.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errors-custom-error-handling">This module introduces the CustomError class to manage a wide range of application errors beyond authentication issues. It allows for specifying error messages, HTTP status codes, and additional payload for a rich error reporting experience. The CustomError class enhances the application’s ability to communicate errors clearly and effectively.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.custom.CustomError"><code class="docutils literal notranslate"><span class="pre">CustomError</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.errors.custom.CustomError.message"><code class="docutils literal notranslate"><span class="pre">CustomError.message</span></code></a></li>

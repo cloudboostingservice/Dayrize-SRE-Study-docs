@@ -5,20 +5,22 @@
 
 .. autoapi-nested-parse::
 
-   product_service Module
+   Services - Products
    ======================
 
-   This module contains the core logic for managing product data within a database.
-   It provides functions to save, retrieve a single product by ID, and list all products.
+   This module encapsulates the core functionality for managing product information within a database, providing essential operations such as creating, retrieving a single product by its ID, and listing all products. It interfaces with a Firestore database to persist product data, ensuring data consistency and integrity across product management tasks.
 
    Functions:
-       save_product(product: Product): Saves a product instance to the database.
-       get_products() -> list: Retrieves a list of all products from the database.
-       get_product(product_id: str) -> dict or None: Retrieves a single product by its unique ID.
+       save_product(product: Product):
+           Saves a product instance to the database. This function accepts a product object, transforms it into a dictionary format, and stores it in the Firestore database under the 'products' collection with a document ID matching the product's unique ID.
 
-   Dependencies:
-       db (Firestore Database): An instance of the Firestore database from the app's configuration.
-       Product (class): The Product model class used for type annotation of product instances.
+       get_products() -> list:
+           Fetches a comprehensive list of all products stored in the database. It retrieves each product document from the 'products' collection, converts the documents into dictionary format, and returns a list of these dictionaries, effectively providing a snapshot of all available products.
+
+       get_product(product_id: str) -> dict or None:
+           Searches for and retrieves a single product by its unique identifier (ID). If the product exists within the 'products' collection, its document is converted to a dictionary and returned. If no product matches the provided ID, the function returns None, indicating the absence of the product.
+   Exceptions:
+       FirestoreError: An error that occurs during the interaction with the Firestore database, such as issues with reading from or writing to the database.
 
 
 

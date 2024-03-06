@@ -146,7 +146,12 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../project-background.html">Project Background</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../index.html">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -155,6 +160,7 @@
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../controllers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/auth/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers.auth</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../controllers/products/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers.products</span></code></a></li>
 </ul>
 </li>
@@ -330,8 +336,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#product-service-module">This module contains the core logic for managing product data within a database.
-It provides functions to save, retrieve a single product by ID, and list all products.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#services-products">This module encapsulates the core functionality for managing product information within a database, providing essential operations such as creating, retrieving a single product by its ID, and listing all products. It interfaces with a Firestore database to persist product data, ensuring data consistency and integrity across product management tasks.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.services.products.save_product"><code class="docutils literal notranslate"><span class="pre">save_product()</span></code></a></li>
@@ -354,16 +359,19 @@ It provides functions to save, retrieve a single product by ID, and list all pro
                   
   <section id="module-app.services.products">
 <span id="app-services-products"></span><h1><a class="reference internal" href="#module-app.services.products" title="app.services.products"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.services.products</span></code></a><a class="headerlink" href="#module-app.services.products" title="Link to this heading">#</a></h1>
-<section id="product-service-module">
-<p>This module contains the core logic for managing product data within a database.
-It provides functions to save, retrieve a single product by ID, and list all products.</p>
+<section id="services-products">
+<p>This module encapsulates the core functionality for managing product information within a database, providing essential operations such as creating, retrieving a single product by its ID, and listing all products. It interfaces with a Firestore database to persist product data, ensuring data consistency and integrity across product management tasks.</p>
 <dl class="simple">
-<dt>Functions:</dt><dd><p>save_product(product: Product): Saves a product instance to the database.
-get_products() -&gt; list: Retrieves a list of all products from the database.
-get_product(product_id: str) -&gt; dict or None: Retrieves a single product by its unique ID.</p>
+<dt>Functions:</dt><dd><dl class="simple">
+<dt>save_product(product: Product):</dt><dd><p>Saves a product instance to the database. This function accepts a product object, transforms it into a dictionary format, and stores it in the Firestore database under the ‘products’ collection with a document ID matching the product’s unique ID.</p>
 </dd>
-<dt>Dependencies:</dt><dd><p>db (Firestore Database): An instance of the Firestore database from the app’s configuration.
-Product (class): The Product model class used for type annotation of product instances.</p>
+<dt>get_products() -&gt; list:</dt><dd><p>Fetches a comprehensive list of all products stored in the database. It retrieves each product document from the ‘products’ collection, converts the documents into dictionary format, and returns a list of these dictionaries, effectively providing a snapshot of all available products.</p>
+</dd>
+<dt>get_product(product_id: str) -&gt; dict or None:</dt><dd><p>Searches for and retrieves a single product by its unique identifier (ID). If the product exists within the ‘products’ collection, its document is converted to a dictionary and returned. If no product matches the provided ID, the function returns None, indicating the absence of the product.</p>
+</dd>
+</dl>
+</dd>
+<dt>Exceptions:</dt><dd><p>FirestoreError: An error that occurs during the interaction with the Firestore database, such as issues with reading from or writing to the database.</p>
 </dd>
 </dl>
 </section>
@@ -482,8 +490,7 @@ None is returned.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#product-service-module">This module contains the core logic for managing product data within a database.
-It provides functions to save, retrieve a single product by ID, and list all products.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#services-products">This module encapsulates the core functionality for managing product information within a database, providing essential operations such as creating, retrieving a single product by its ID, and listing all products. It interfaces with a Firestore database to persist product data, ensuring data consistency and integrity across product management tasks.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app.services.products.save_product"><code class="docutils literal notranslate"><span class="pre">save_product()</span></code></a></li>

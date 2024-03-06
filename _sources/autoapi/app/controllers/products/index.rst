@@ -23,12 +23,6 @@
        get_product(product_id): Endpoint for retrieving a single product by ID.
        validate_product_fields(product): Validates the required fields in a product's data.
 
-   Dependencies:
-       Flask Blueprint, Flask request and jsonify for handling HTTP requests and responses.
-       Custom decorators for authentication and role-based access control.
-       products service module for interacting with product data.
-       CustomError for error handling.
-
 
 
 Module Contents
@@ -57,6 +51,10 @@ Attributes
 
 .. py:data:: products_controller
 
+   
+
+.. py:function:: save_product()
+
    Endpoint to save a new product.
 
    This endpoint requires authentication and an admin role. It accepts JSON data representing a product,
@@ -66,15 +64,37 @@ Attributes
    Authentication: Required
    Required Roles: ADMIN_ROLE
 
-.. py:function:: save_product()
-
 
 .. py:function:: get_products()
+
+   Endpoint to retrieve all products.
+
+   This endpoint fetches all products from the database and returns them as a JSON list.
+
+   Request Method: GET
+   Authentication: Not Required
 
 
 .. py:function:: get_product(product_id)
 
+   Endpoint to retrieve a single product by its unique ID.
+
+   If the product is found, it returns the product data as JSON. If not found, it raises a CustomError.
+
+   Request Method: GET
+   Authentication: Not Required
+   :param product_id: The unique ID of the product to retrieve.
+   :type product_id: str
+
 
 .. py:function:: validate_product_fields(product)
+
+   Validates the required fields in a product's data.
+
+   This function checks if the 'name' and 'description' fields are present in the product data. If not,
+   it raises a CustomError.
+
+   :param product: The product data to validate.
+   :type product: dict
 
 

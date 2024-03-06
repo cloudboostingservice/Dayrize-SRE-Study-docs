@@ -145,7 +145,12 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project-background.html">Project Background</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="autoapi/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="autoapi/app/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -154,6 +159,7 @@
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="autoapi/app/controllers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/app/controllers/auth/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers.auth</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/app/controllers/products/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers.products</span></code></a></li>
 </ul>
 </li>
@@ -295,6 +301,7 @@ document.write(`
  | <a href="#G"><strong>G</strong></a>
  | <a href="#I"><strong>I</strong></a>
  | <a href="#J"><strong>J</strong></a>
+ | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
@@ -336,8 +343,6 @@ document.write(`
         <li><a href="autoapi/app/index.html#module-app">module</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/app/config/firebase/index.html#app.config.firebase.app">app (in module app.config.firebase)</a>
-</li>
       <li>
     app.config
 
@@ -357,6 +362,13 @@ document.write(`
 
       <ul>
         <li><a href="autoapi/app/controllers/index.html#module-app.controllers">module</a>
+</li>
+      </ul></li>
+      <li>
+    app.controllers.auth
+
+      <ul>
+        <li><a href="autoapi/app/controllers/auth/index.html#module-app.controllers.auth">module</a>
 </li>
       </ul></li>
       <li>
@@ -380,8 +392,6 @@ document.write(`
         <li><a href="autoapi/app/decorators/auth/index.html#module-app.decorators.auth">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     app.decorators.authorization
 
@@ -389,6 +399,8 @@ document.write(`
         <li><a href="autoapi/app/decorators/authorization/index.html#module-app.decorators.authorization">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     app.errors
 
@@ -440,6 +452,14 @@ document.write(`
       </ul></li>
       <li><a href="autoapi/jwt/index.html#jwt.AUTH0_DOMAIN">AUTH0_DOMAIN (in module jwt)</a>
 </li>
+      <li><a href="autoapi/app/index.html#app.auth_controller">auth_controller (in module app)</a>
+
+      <ul>
+        <li><a href="autoapi/app/controllers/index.html#app.controllers.auth_controller">(in module app.controllers)</a>
+</li>
+        <li><a href="autoapi/app/controllers/auth/index.html#app.controllers.auth.auth_controller">(in module app.controllers.auth)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/app/errors/auth/index.html#app.errors.auth.AuthError">AuthError</a>, <a href="autoapi/app/errors/index.html#app.errors.AuthError">[1]</a>, <a href="autoapi/app/index.html#app.AuthError">[2]</a>
 </li>
   </ul></td>
@@ -448,6 +468,8 @@ document.write(`
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/app/controllers/auth/index.html#app.controllers.auth.callback">callback() (in module app.controllers.auth)</a>
+</li>
       <li><a href="autoapi/jwt/index.html#jwt.CLIENT_ID">CLIENT_ID (in module jwt)</a>
 </li>
   </ul></td>
@@ -530,6 +552,14 @@ document.write(`
   </ul></td>
 </tr></table>
 
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/app/controllers/auth/index.html#app.controllers.auth.login">login() (in module app.controllers.auth)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -552,6 +582,8 @@ document.write(`
         <li><a href="autoapi/app/config/firebase/index.html#module-app.config.firebase">app.config.firebase</a>
 </li>
         <li><a href="autoapi/app/controllers/index.html#module-app.controllers">app.controllers</a>
+</li>
+        <li><a href="autoapi/app/controllers/auth/index.html#module-app.controllers.auth">app.controllers.auth</a>
 </li>
         <li><a href="autoapi/app/controllers/products/index.html#module-app.controllers.products">app.controllers.products</a>
 </li>

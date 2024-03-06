@@ -45,7 +45,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="app.decorators" href="../../decorators/index.html" />
-    <link rel="prev" title="app.controllers" href="../index.html" />
+    <link rel="prev" title="app.controllers.auth" href="../auth/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -146,7 +146,12 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../project-background.html">Project Background</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../index.html">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -155,6 +160,7 @@
 </ul>
 </li>
 <li class="toctree-l3 current active has-children"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../auth/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers.auth</span></code></a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers.products</span></code></a></li>
 </ul>
 </li>
@@ -372,11 +378,6 @@ get_products(): Endpoint for retrieving all products.
 get_product(product_id): Endpoint for retrieving a single product by ID.
 validate_product_fields(product): Validates the required fields in a product’s data.</p>
 </dd>
-<dt>Dependencies:</dt><dd><p>Flask Blueprint, Flask request and jsonify for handling HTTP requests and responses.
-Custom decorators for authentication and role-based access control.
-products service module for interacting with product data.
-CustomError for error handling.</p>
-</dd>
 </dl>
 </section>
 <section id="module-contents">
@@ -386,16 +387,16 @@ CustomError for error handling.</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#app.controllers.products.save_product" title="app.controllers.products.save_product"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_product</span></code></a>()</p></td>
-<td><p></p></td>
+<td><p>Endpoint to save a new product.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#app.controllers.products.get_products" title="app.controllers.products.get_products"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_products</span></code></a>()</p></td>
-<td><p></p></td>
+<td><p>Endpoint to retrieve all products.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#app.controllers.products.get_product" title="app.controllers.products.get_product"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_product</span></code></a>(product_id)</p></td>
-<td><p></p></td>
+<td><p>Endpoint to retrieve a single product by its unique ID.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#app.controllers.products.validate_product_fields" title="app.controllers.products.validate_product_fields"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_product_fields</span></code></a>(product)</p></td>
-<td><p></p></td>
+<td><p>Validates the required fields in a product's data.</p></td>
 </tr>
 </tbody>
 </table>
@@ -405,13 +406,18 @@ CustomError for error handling.</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#app.controllers.products.products_controller" title="app.controllers.products.products_controller"><code class="xref py py-obj docutils literal notranslate"><span class="pre">products_controller</span></code></a></p></td>
-<td><p>Endpoint to save a new product.</p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py data">
 <dt class="sig sig-object py" id="app.controllers.products.products_controller">
 <span class="sig-prename descclassname"><span class="pre">app.controllers.products.</span></span><span class="sig-name descname"><span class="pre">products_controller</span></span><a class="headerlink" href="#app.controllers.products.products_controller" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.controllers.products.save_product">
+<span class="sig-prename descclassname"><span class="pre">app.controllers.products.</span></span><span class="sig-name descname"><span class="pre">save_product</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.controllers.products.save_product" title="Link to this definition">#</a></dt>
 <dd><p>Endpoint to save a new product.</p>
 <p>This endpoint requires authentication and an admin role. It accepts JSON data representing a product,
 validates the necessary fields, creates a Product instance, and saves it to the database.</p>
@@ -421,24 +427,37 @@ Required Roles: ADMIN_ROLE</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="app.controllers.products.save_product">
-<span class="sig-prename descclassname"><span class="pre">app.controllers.products.</span></span><span class="sig-name descname"><span class="pre">save_product</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.controllers.products.save_product" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="app.controllers.products.get_products">
 <span class="sig-prename descclassname"><span class="pre">app.controllers.products.</span></span><span class="sig-name descname"><span class="pre">get_products</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.controllers.products.get_products" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Endpoint to retrieve all products.</p>
+<p>This endpoint fetches all products from the database and returns them as a JSON list.</p>
+<p>Request Method: GET
+Authentication: Not Required</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="app.controllers.products.get_product">
 <span class="sig-prename descclassname"><span class="pre">app.controllers.products.</span></span><span class="sig-name descname"><span class="pre">get_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">product_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.controllers.products.get_product" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Endpoint to retrieve a single product by its unique ID.</p>
+<p>If the product is found, it returns the product data as JSON. If not found, it raises a CustomError.</p>
+<p>Request Method: GET
+Authentication: Not Required
+:param product_id: The unique ID of the product to retrieve.
+:type product_id: str</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="app.controllers.products.validate_product_fields">
 <span class="sig-prename descclassname"><span class="pre">app.controllers.products.</span></span><span class="sig-name descname"><span class="pre">validate_product_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">product</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.controllers.products.validate_product_fields" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Validates the required fields in a product’s data.</p>
+<p>This function checks if the ‘name’ and ‘description’ fields are present in the product data. If not,
+it raises a CustomError.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>product</strong> (<em>dict</em>) – The product data to validate.</p>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 </section>
@@ -456,12 +475,12 @@ Required Roles: ADMIN_ROLE</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../index.html"
+       href="../auth/index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers</span></code></p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers.auth</span></code></p>
       </div>
     </a>
     <a class="right-next"

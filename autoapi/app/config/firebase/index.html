@@ -146,7 +146,12 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../project-background.html">Project Background</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../index.html">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -155,6 +160,7 @@
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../controllers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/auth/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers.auth</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../controllers/products/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers.products</span></code></a></li>
 </ul>
 </li>
@@ -330,8 +336,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#firestore-database-client-initialization">This module establishes a connection to a Firestore database using the Google Cloud Firestore client. It is designed to facilitate interactions with Firestore, enabling the application to perform operations such as reading, writing, and querying documents within a Firestore database.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app.config.firebase.app"><code class="docutils literal notranslate"><span class="pre">app</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app.config.firebase.db"><code class="docutils literal notranslate"><span class="pre">db</span></code></a></li>
 </ul>
 </li>
@@ -348,14 +354,37 @@ document.write(`
                   
   <section id="module-app.config.firebase">
 <span id="app-config-firebase"></span><h1><a class="reference internal" href="#module-app.config.firebase" title="app.config.firebase"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.config.firebase</span></code></a><a class="headerlink" href="#module-app.config.firebase" title="Link to this heading">#</a></h1>
-<p>Doc of the function</p>
+<section id="firestore-database-client-initialization">
+<p>This module establishes a connection to a Firestore database using the Google Cloud Firestore client. It is designed to facilitate interactions with Firestore, enabling the application to perform operations such as reading, writing, and querying documents within a Firestore database.</p>
+<dl class="simple">
+<dt>Requirements:</dt><dd><ul class="simple">
+<li><p>Google Cloud Firestore library: This module relies on the <cite>google-cloud-firestore</cite> package for the Firestore client. Ensure this package is installed in your environment.</p></li>
+<li><p>Authentication: The Google Cloud Firestore client requires proper authentication to access and interact with your Firestore database. Authentication can be configured through environment variables specifying the path to your Google Cloud service account key file.</p></li>
+</ul>
+</dd>
+<dt>Usage:</dt><dd><ul class="simple">
+<li><p>The <cite>db</cite> variable is a Firestore client instance, ready to be used throughout the application for database operations.</p></li>
+<li><p>This client handles tasks such as connecting to the database, performing CRUD operations, and managing transactions.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>To use this Firestore client for reading a document from a collection named ‘users’, you can do the following:</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>python
+user_ref = db.collection(‘users’).document(‘user_id’)
+user_doc = user_ref.get()
+if user_doc.exists:</p>
+<blockquote>
+<div><p>print(user_doc.to_dict())</p>
+</div></blockquote>
+<dl class="simple">
+<dt>else:</dt><dd><p>print(‘No such document!’)</p>
+</dd>
+</dl>
+<p>This module simplifies the process of integrating Firestore database operations into your application by providing a pre-configured Firestore client.</p>
+</section>
 <section id="module-contents">
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
-<dl class="py data">
-<dt class="sig sig-object py" id="app.config.firebase.app">
-<span class="sig-prename descclassname"><span class="pre">app.config.firebase.</span></span><span class="sig-name descname"><span class="pre">app</span></span><a class="headerlink" href="#app.config.firebase.app" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
 <dl class="py data">
 <dt class="sig sig-object py" id="app.config.firebase.db">
 <span class="sig-prename descclassname"><span class="pre">app.config.firebase.</span></span><span class="sig-name descname"><span class="pre">db</span></span><a class="headerlink" href="#app.config.firebase.db" title="Link to this definition">#</a></dt>
@@ -409,8 +438,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#firestore-database-client-initialization">This module establishes a connection to a Firestore database using the Google Cloud Firestore client. It is designed to facilitate interactions with Firestore, enabling the application to perform operations such as reading, writing, and querying documents within a Firestore database.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app.config.firebase.app"><code class="docutils literal notranslate"><span class="pre">app</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app.config.firebase.db"><code class="docutils literal notranslate"><span class="pre">db</span></code></a></li>
 </ul>
 </li>

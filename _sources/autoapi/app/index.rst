@@ -6,15 +6,34 @@
 .. autoapi-nested-parse::
 
    Main Module
+   <<<<<<< Updated upstream
    ===========
 
-   This module sets up and configures the Flask application for the Dayrize Site Reliability Engineering Case Study.
-   It integrates with Auth0 for authentication, utilizes Flask-Loguru for logging, and handles custom errors through
-   defined error handlers. The application supports routes for product management, user authentication (login and logout),
-   and the processing of authentication callbacks.
+   This module sets up and configures the Flask application for the Dayrize Site Reliability Engineering Case Study. It integrates with Auth0 for authentication, utilizes Flask-Loguru for logging, and handles custom errors through defined error handlers. The application supports routes for product management, user authentication (login and logout), and the processing of authentication callbacks.
 
    Functions:
-       create_app(): Creates and configures the Flask application instance.
+       create_app() -> Flask: Creates and configures the Flask application instance.
+           - It sets up logging, registers the products controller and auth controller blueprints, and defines routes for authentication and error handling. Environment variables are used for configuration.
+           - Inner Functions:
+               - invalid_api_usage(e: CustomError) -> tuple: Handles custom errors defined in the application, returning a JSON response with the error details and HTTP status code.
+               - handle_auth_error(ex: AuthError) -> Response: Handles authentication errors, returning a JSON response with the authentication error details and HTTP status code.
+
+   Constants:
+       ENV_FILE (str): Path to the environment variables file, found using `find_dotenv`.
+
+   =======
+   ======================
+   This module sets up and configures the Flask application for the Dayrize Site Reliability Engineering Case Study. It integrates with external services like Auth0 for authentication, utilizes Flask-Loguru for advanced logging capabilities, and handles custom errors through well-defined error handlers. Specifically, it supports routes for product management, user authentication processes (including login and logout functionalities), and the processing of authentication callbacks efficiently.
+
+   Functions:
+   create_app() -> Flask: Creates and configures the Flask application instance, setting up logging, registering controller blueprints for product management and authentication routes, and defining error handlers for custom and authentication-related errors.
+
+   Constants:
+   ENV_FILE (str): Path to the .env file, determined by searching the directory structure. Used to load environment variables critical for application configuration.
+   Exceptions:
+       CustomError: A custom exception class for handling application-specific errors. It allows for structured error responses that include a status code and a detailed error message.
+       AuthError: An exception class designed for handling authentication-related errors. It is used to construct responses with specific error information and the corresponding HTTP status code when authentication fails.
+   >>>>>>> Stashed changes
 
 
 
@@ -51,19 +70,17 @@ Attributes
 .. autoapisummary::
 
    app.products_controller
+   app.auth_controller
    app.ENV_FILE
 
 
 .. py:data:: products_controller
 
-   Endpoint to save a new product.
+   
 
-   This endpoint requires authentication and an admin role. It accepts JSON data representing a product,
-   validates the necessary fields, creates a Product instance, and saves it to the database.
+.. py:data:: auth_controller
 
-   Request Method: POST
-   Authentication: Required
-   Required Roles: ADMIN_ROLE
+   
 
 .. py:exception:: CustomError(message, status_code=None, payload=None)
 

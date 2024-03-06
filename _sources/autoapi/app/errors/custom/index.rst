@@ -5,7 +5,7 @@
 
 .. autoapi-nested-parse::
 
-   Module: Custom Application Error Handling
+   Errors - Custom Error Handling
    =========================================
 
    This module introduces the CustomError class to manage a wide range of application errors beyond authentication issues. It allows for specifying error messages, HTTP status codes, and additional payload for a rich error reporting experience. The CustomError class enhances the application's ability to communicate errors clearly and effectively.

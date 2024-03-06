@@ -5,7 +5,7 @@
 
 .. autoapi-nested-parse::
 
-   Module: Authentication Error Handling
+   Authentication Error Handling
    =====================================
 
    This module defines the AuthError class for handling authentication-related exceptions within the application. It provides detailed information on authentication failures, including specific error messages and HTTP status codes, facilitating clear and actionable error reporting.
