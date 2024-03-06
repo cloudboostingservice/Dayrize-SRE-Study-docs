@@ -1,0 +1,626 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Terraform Resources &#8212; Dayrize SRE Study 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=a681ed88"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'iac/terraform_resources';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Dayrize SRE Study 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project-background.html">Project Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app_description/index.html">Monitoring and Alerts for App Engine Application with Terraform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components.html">Components</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="index.html">Infrastructure as Code</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Terraform Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html">Terraform Inputs</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../autoapi/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../autoapi/app/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/app/config/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.config</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/app/config/firebase/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.config.firebase</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/app/controllers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/app/controllers/auth/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers.auth</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/app/controllers/products/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.controllers.products</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/app/decorators/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.decorators</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/app/decorators/auth/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.decorators.auth</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/app/decorators/authorization/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.decorators.authorization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/app/errors/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.errors</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/app/errors/auth/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.errors.auth</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/app/errors/custom/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.errors.custom</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/app/model/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.model</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/app/model/product/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.model.product</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/app/services/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.services</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/app/services/products/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">app.services.products</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../autoapi/jwt/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jwt</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../autoapi/roles/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">roles</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/iac/terraform_resources.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Terraform Resources</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Terraform Resources</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#terraform-inputs">Terraform Inputs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#outputs">Outputs</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="terraform-resources">
+<h1>Terraform Resources<a class="headerlink" href="#terraform-resources" title="Link to this heading">#</a></h1>
+<p>The following is a list of the Terraform resources managed by this configuration, along with their types and links to the official Terraform registry for more details.</p>
+<table class="table">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://registry.terraform.io/providers/hashicorp/google/5.18.0/docs/resources/app_engine_standard_app_version">google_app_engine_standard_app_version.dayrize_app_v1</a></p></td>
+<td><p>resource</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://registry.terraform.io/providers/hashicorp/google/5.18.0/docs/resources/firestore_database">google_firestore_database.database</a></p></td>
+<td><p>resource</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://registry.terraform.io/providers/hashicorp/google/5.18.0/docs/resources/project_iam_member">google_project_iam_member.service_account_roles</a></p></td>
+<td><p>resource</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://registry.terraform.io/providers/hashicorp/google/5.18.0/docs/resources/project_service">google_project_service.api</a></p></td>
+<td><p>resource</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://registry.terraform.io/providers/hashicorp/google/5.18.0/docs/resources/service_account">google_service_account.custom_service_account</a></p></td>
+<td><p>resource</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://registry.terraform.io/providers/hashicorp/google/5.18.0/docs/resources/storage_bucket">google_storage_bucket.bucket</a></p></td>
+<td><p>resource</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://registry.terraform.io/providers/hashicorp/google/5.18.0/docs/resources/storage_bucket_object">google_storage_bucket_object.object</a></p></td>
+<td><p>resource</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="terraform-inputs">
+<h1>Terraform Inputs<a class="headerlink" href="#terraform-inputs" title="Link to this heading">#</a></h1>
+<p>This section details the input variables required to configure the Terraform resources. The table includes a description, type, default values, and if they are required.</p>
+<table class="table">
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 44.4%" />
+<col style="width: 11.1%" />
+<col style="width: 11.1%" />
+<col style="width: 11.1%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Required</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AUTH0_CLIENT_ID</p></td>
+<td><p>Environment variable</p></td>
+<td><p><cite>string</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>AUTH0_DOMAIN</p></td>
+<td><p>Environment variable</p></td>
+<td><p><cite>string</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-even"><td><p>LOG_LEVEL</p></td>
+<td><p>Environment variable</p></td>
+<td><p><cite>string</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>account_identifier</p></td>
+<td><p>Account Identifier</p></td>
+<td><p><cite>string</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-even"><td><p>apis</p></td>
+<td><p>n/a</p></td>
+<td><p><cite>list(string)</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>database_name_fs</p></td>
+<td><p>database firestore name</p></td>
+<td><p><cite>string</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-even"><td><p>entrypoint</p></td>
+<td><p>command to run app</p></td>
+<td><p><cite>string</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>location</p></td>
+<td><p>location all resources</p></td>
+<td><p><cite>string</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-even"><td><p>name_bucket</p></td>
+<td><p>name bucket</p></td>
+<td><p><cite>string</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>name_file_app</p></td>
+<td><p>name app</p></td>
+<td><p><cite>string</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-even"><td><p>port</p></td>
+<td><p>service port</p></td>
+<td><p><cite>string</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>project_id</p></td>
+<td><p>project name</p></td>
+<td><p><cite>string</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-even"><td><p>roles</p></td>
+<td><p>Map of roles for the service account</p></td>
+<td><p><cite>map(string)</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>runtime</p></td>
+<td><p>run time</p></td>
+<td><p><cite>string</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-even"><td><p>service_app_engine</p></td>
+<td><p>name of service</p></td>
+<td><p><cite>string</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>source_file_app</p></td>
+<td><p>source file app</p></td>
+<td><p><cite>string</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-even"><td><p>type_db</p></td>
+<td><p>type database native or datastore</p></td>
+<td><p><cite>string</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>url_base</p></td>
+<td><p>url base file app</p></td>
+<td><p><cite>string</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-even"><td><p>version_app</p></td>
+<td><p>version App</p></td>
+<td><p><cite>string</cite></p></td>
+<td><p>n/a</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="outputs">
+<h1>Outputs<a class="headerlink" href="#outputs" title="Link to this heading">#</a></h1>
+<p>This configuration currently does not define any outputs.</p>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Terraform Resources</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#terraform-inputs">Terraform Inputs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#outputs">Outputs</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Team@CBS - Andrés Mayor, Diego Hernández
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Team@CBS.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

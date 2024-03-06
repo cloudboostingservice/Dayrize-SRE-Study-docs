@@ -6,8 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python Module Index &#8212; Dayrize SRE Study 1.0 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Components &#8212; Dayrize SRE Study 1.0 documentation</title>
   
   
   
@@ -40,14 +41,13 @@
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'py-modindex';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'components';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-
+    <link rel="next" title="Infrastructure as Code" href="iac/index.html" />
+    <link rel="prev" title="Monitoring and Alerts for App Engine Application with Terraform" href="app_description/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-
-
   </head>
   
   
@@ -107,8 +107,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -149,11 +147,11 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="project-background.html">Project Background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="app_description/index.html">Monitoring and Alerts for App Engine Application with Terraform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="components.html">Components</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Components</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="iac/index.html">Infrastructure as Code</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="iac/resources.html">Terraform Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iac/inputs.html">Terraform Inputs</a></li>
@@ -241,6 +239,54 @@
 
 
 
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/components.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
@@ -274,7 +320,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -285,11 +333,22 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1></h1>
+    <h1>Components</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics">Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection">Data Collection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alert-policy-creation">Alert Policy Creation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automation-with-terraform">Automation with Terraform</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -299,126 +358,53 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-
-   <h1>Python Module Index</h1>
-
-   <div class="modindex-jumpbox">
-   <a href="#cap-a"><strong>a</strong></a> | 
-   <a href="#cap-j"><strong>j</strong></a> | 
-   <a href="#cap-p"><strong>p</strong></a> | 
-   <a href="#cap-r"><strong>r</strong></a>
-   </div>
-
-   <table class="indextable modindextable">
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-a"><td></td><td>
-       <strong>a</strong></td><td></td></tr>
-     <tr>
-       <td><img src="_static/minus.png" class="toggler"
-              id="toggle-1" style="display: none" alt="-" /></td>
-       <td>
-       <a href="autoapi/app/index.html#module-app"><code class="xref">app</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="autoapi/app/config/index.html#module-app.config"><code class="xref">app.config</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="autoapi/app/config/firebase/index.html#module-app.config.firebase"><code class="xref">app.config.firebase</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="autoapi/app/controllers/index.html#module-app.controllers"><code class="xref">app.controllers</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="autoapi/app/controllers/auth/index.html#module-app.controllers.auth"><code class="xref">app.controllers.auth</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="autoapi/app/controllers/products/index.html#module-app.controllers.products"><code class="xref">app.controllers.products</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="autoapi/app/decorators/index.html#module-app.decorators"><code class="xref">app.decorators</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="autoapi/app/decorators/auth/index.html#module-app.decorators.auth"><code class="xref">app.decorators.auth</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="autoapi/app/decorators/authorization/index.html#module-app.decorators.authorization"><code class="xref">app.decorators.authorization</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="autoapi/app/errors/index.html#module-app.errors"><code class="xref">app.errors</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="autoapi/app/errors/auth/index.html#module-app.errors.auth"><code class="xref">app.errors.auth</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="autoapi/app/errors/custom/index.html#module-app.errors.custom"><code class="xref">app.errors.custom</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="autoapi/app/model/index.html#module-app.model"><code class="xref">app.model</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="autoapi/app/model/product/index.html#module-app.model.product"><code class="xref">app.model.product</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="autoapi/app/services/index.html#module-app.services"><code class="xref">app.services</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="autoapi/app/services/products/index.html#module-app.services.products"><code class="xref">app.services.products</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-j"><td></td><td>
-       <strong>j</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="autoapi/jwt/index.html#module-jwt"><code class="xref">jwt</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-p"><td></td><td>
-       <strong>p</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="autoapi/app/model/product/index.html#module-product"><code class="xref">product</code></a></td><td>
-       <em>This module contains the Product class.</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-r"><td></td><td>
-       <strong>r</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="autoapi/roles/index.html#module-roles"><code class="xref">roles</code></a></td><td>
-       <em></em></td></tr>
-   </table>
+  <section id="components">
+<span id="components-page"></span><h1>Components<a class="headerlink" href="#components" title="Link to this heading">#</a></h1>
+<p>This section details each component of the monitoring and alerts system.</p>
+<nav class="contents local" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#metrics" id="id1">Metrics</a></p></li>
+<li><p><a class="reference internal" href="#data-collection" id="id2">Data Collection</a></p></li>
+<li><p><a class="reference internal" href="#alert-policy-creation" id="id3">Alert Policy Creation</a></p></li>
+<li><p><a class="reference internal" href="#automation-with-terraform" id="id4">Automation with Terraform</a></p></li>
+</ul>
+</nav>
+<section id="metrics">
+<span id="metrics-section"></span><h2><a class="toc-backref" href="#id1" role="doc-backlink">Metrics</a><a class="headerlink" href="#metrics" title="Link to this heading">#</a></h2>
+<p>The following key metrics will be analyzed:</p>
+<ul class="simple">
+<li><p>CPU Usage: Monitoring the application’s CPU usage to identify bottlenecks and optimize performance.</p></li>
+<li><p>Memory: Monitoring the application’s memory usage to detect memory leaks and ensure resource use efficiency.</p></li>
+<li><p>Latency: Measuring the application’s response time to evaluate user experience and processing speed.</p></li>
+<li><p>Traffic: Monitoring the volume of requests and traffic the application receives to identify demand spikes and efficiently scale resources.</p></li>
+<li><p>Errors: Tracking the frequency and type of errors occurring in the application to detect issues and improve stability.</p></li>
+</ul>
+</section>
+<section id="data-collection">
+<span id="data-collection-section"></span><h2><a class="toc-backref" href="#id2" role="doc-backlink">Data Collection</a><a class="headerlink" href="#data-collection" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Stackdriver Monitoring will be used to collect the application’s metrics on App Engine.</p></li>
+<li><p>Terraform will be used to automate the configuration and management of Stackdriver Monitoring resources.</p></li>
+</ul>
+</section>
+<section id="alert-policy-creation">
+<span id="alert-policy-creation-section"></span><h2><a class="toc-backref" href="#id3" role="doc-backlink">Alert Policy Creation</a><a class="headerlink" href="#alert-policy-creation" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Custom alert policies will be created for each metric, defining thresholds and conditions that trigger notifications when anomalies are detected.</p></li>
+<li><p>Alert policies will be configured to send notifications to a specific Slack channel, allowing relevant teams to receive timely information on critical events.</p></li>
+</ul>
+</section>
+<section id="automation-with-terraform">
+<span id="automation-with-terraform-section"></span><h2><a class="toc-backref" href="#id4" role="doc-backlink">Automation with Terraform</a><a class="headerlink" href="#automation-with-terraform" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Terraform scripts will be used to automate the creation and configuration of:
+- Metrics in Stackdriver Monitoring.
+- Alert policies.
+- Integration with the Slack channel.</p></li>
+</ul>
+</section>
+</section>
 
 
                 </article>
@@ -431,6 +417,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="app_description/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Monitoring and Alerts for App Engine Application with Terraform</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="iac/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Infrastructure as Code</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -438,7 +442,23 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics">Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection">Data Collection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alert-policy-creation">Alert Policy Creation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automation-with-terraform">Automation with Terraform</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
